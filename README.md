@@ -24,19 +24,21 @@ uv pip install \
     minionpy
 ```
 
-BBOB-2009 is in `coco-experiment`, while CEC-20xx are automatically included in [minionpy](https://github.com/khoirulmuzakka/Minion), created by Dr. Khoirul Faiq Muzakka who is a cool physicist. The code includes and updates the state of the art algorithms in the most recent CEC competitions organized by [Dr. Ponnuthurai Nagaratnam Suganthan and others](https://github.com/P-N-Suganthan/2025-CEC/tree/main). 
+BBOB-2009 is in `coco-experiment`, while CEC-20xx are automatically included in [minionpy](https://github.com/khoirulmuzakka/Minion), created by Dr. Khoirul Faiq Muzakka, who is a cool physicist. 
 
-Minion (minionpy) includes a lot of DEs (not so useful), but also its own original algorithm called RCMAES which is worth trying before "fine tuning" with Nikolaus Hansen's BIPOP-aCMAES in [pycma](https://github.com/CMA-ES/pycma). The latter is highly optimized and nowhere close to what is in the tutorials, various older versions, and alternative implementations.
+Minion includes and updates the state of the art algorithms from the most recent CEC competitions organized by [Dr. Ponnuthurai Nagaratnam Suganthan and others](https://github.com/P-N-Suganthan/2025-CEC/tree/main). 
+
+I do not believe in numerous differential evolutions (DEs), including their combinations with the CMAES family (e.g. EA4Eig), but check out Minion's RCMAES which is worth trying before "fine tuning" with Nikolaus Hansen's BIPOP-aCMAES in [pycma](https://github.com/CMA-ES/pycma). The latter is highly optimized and nowhere close to what is in the tutorials, various older versions, and alternative implementations.
 
 Minion is often updated, to upgrade:
 
 ```bash
-python -m pip install --upgrade minionpy
+uv pip install --upgrade minionpy
 ```
 
 ## Additional Notes
 
-Hansen's pycma BIPOP-aCMAES is the best we have at the moment, but nonetheless on tougher problems such as CEC2017 F25-F30, CEC2022 F12 (or even CEC2017 F20 which it solves), the algorithm struggles (but so do all the others):
+Hansen's pycma BIPOP-aCMAES is the best we have at the moment, but nonetheless on tougher problems such as CEC2017 F25-F30, CEC2022 F12 (or even CEC2017 F20, which it solves), the algorithm struggles (but so do all the others):
 
 ```bash
 evals=   3000000  best_f=2.021369686143e+03  error=2.136968614255e+01
