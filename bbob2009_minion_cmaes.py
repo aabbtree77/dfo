@@ -5,27 +5,6 @@ import matplotlib.pyplot as plt
 import cocoex
 import minionpy as mpy
 
-def uniform_sampling(problem, budget):
-    """
-    Uniform random sampling using exactly the same evaluation
-    budget as the optimizer.
-    """
-    best = np.inf
-
-    batch = 4096
-    done = 0
-
-    while done < budget:
-        n = min(batch, budget - done)
-        X = np.random.uniform(-100.0, 100.0, (n, D))
-        fs = problem(X)
-        b = np.min(fs)
-        if b < best:
-            best = b
-        done += n
-
-    return best
-
 def main():
     D = 40
     budget = 1000_000
@@ -38,19 +17,15 @@ def main():
         instance=1,
     )
 
+    fopt = float(problem.best_value())
+    
     print("Problem:", problem.id)
     print("Dimension:", problem.dimension)
     print("Budget:", budget)
-    
-    print("\nRunning uniform random sampling baseline...")
-    random_best = uniform_sampling(problem, 10000)
-
-    print(f"Uniform sampling best : {random_best:.12e}")
-    print(f"Uniform sampling error: {abs(random_best - fopt):.12e}")
 
     print("\nStarting CMA-ES...\n")
 
-    fopt = float(problem.best_value())
+
 
     bounds = [(-5.0, 5.0)] * D
 
