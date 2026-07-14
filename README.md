@@ -38,7 +38,7 @@ uv pip install --upgrade minionpy
 
 ## Additional Notes
 
-Hansen's pycma BIPOP-aCMAES is the best we have at the moment, but nonetheless on tougher problems such as CEC2017 F25-F30, CEC2022 F12 (or even CEC2017 F20, which it solves), the algorithm struggles (but so do all the others):
+Hansen's pycma BIPOP-aCMAES is the best. Nonetheless, on very hard problems such as the composite functions in CEC2017 (F26 - F30), CEC2022 F12 (or even CEC2017 F20, which it solves), the algorithm struggles (but so do all the others):
 
 ```bash
 evals=   3000000  best_f=2.021369686143e+03  error=2.136968614255e+01
