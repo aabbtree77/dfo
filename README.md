@@ -1,6 +1,6 @@
 ## Derivative-free Optimization
 
-This is the code for issues [#7](https://github.com/khoirulmuzakka/Minion/issues/7), [8](https://github.com/khoirulmuzakka/Minion/issues/8), and [#11](https://github.com/khoirulmuzakka/Minion/issues/11).
+The code for [#7](https://github.com/khoirulmuzakka/Minion/issues/7), [#8](https://github.com/khoirulmuzakka/Minion/issues/8), and [#11](https://github.com/khoirulmuzakka/Minion/issues/11).
 
 ```bash
 
